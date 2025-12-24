@@ -3,13 +3,14 @@ pipeline {
     environment {
         // Set the container name and the workspace directory
         LAMP_CONTAINER_NAME = 'apache_container'
-        LOCAL_PROJECT_FOLDER = "${WORKSPACE}/unixfinalproject-main"  // Point to the correct folder after checkout
+        LOCAL_PROJECT_FOLDER = "${WORKSPACE}/unixfinalproject"  // Point to the correct folder after checkout
     }
     stages {
         stage('Checkout') {
             steps {
                 // Clone the GitHub repository
-                git 'https://github.com/lojain-yadak/unixfinalproject.git            }
+                git branch: 'main', url: 'https://github.com/lojain-yadak/unixfinalproject.git'
+            }
         }
         stage('Build') {
             steps {
