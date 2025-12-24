@@ -3,14 +3,14 @@ pipeline {
     environment {
         
         LAMP_CONTAINER_NAME = 'apache_container'
-        LOCAL_PROJECT_FOLDER = "${WORKSPACE}/unixfinalproject"
+        LOCAL_PROJECT_FOLDER = "${WORKSPACE}/finalunix"
         PATH = "/usr/local/bin:${env.PATH}"  
     }
     stages {
         stage('Checkout') {
             steps {
                 echo 'Checking out repository...'
-                git branch: 'main', url: 'https://github.com/lojain-yadak/unixfinalproject.git'
+                git branch: 'main', url: 'https://github.com/lojain-yadak/finalunix.git'
             }
         }
 
