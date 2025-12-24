@@ -24,7 +24,7 @@ pipeline {
             steps {
                 script {
                     echo 'Starting Docker containers...'
-                    sh 'docker-compose up -d'  
+                    sh 'docker compose up -d'  
 
                     echo 'Deploying files to container...'
                     sh "docker cp ${LOCAL_PROJECT_FOLDER}/. ${LAMP_CONTAINER_NAME}:/var/www/html"
